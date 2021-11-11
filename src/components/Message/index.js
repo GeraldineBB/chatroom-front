@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const Message = ({message}) => (
-  <p>{message}</p>
+  <div className="container-message">
+    <p>{message}</p>
+  </div>
 )
 
 Message.propTypes = {
