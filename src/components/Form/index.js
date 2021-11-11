@@ -34,9 +34,13 @@ const Form = () => {
       className="form-button" 
       onClick={
         (event) => {
+          event.preventDefault(); 
           console.log('je dois ajouter un message onClick'); 
-          console.log(event.target.value); 
-          dispatch(addNewMessage(event.target.value))}
+          console.log(messages); 
+
+          dispatch(addNewMessage(valueInput));
+          dispatch(changeValueInput(''));
+        }
       }
      />
   </form>
