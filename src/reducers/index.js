@@ -16,10 +16,16 @@ const initialState = {
       content: 'stp',
     },
   ],
+  newMessageContent: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'SET_NEW_MESSAGE':
+      return {
+        ...state,
+        newMessageContent: action.newMessageContent,
+      };
     case 'ADD_NEW_MESSAGE_BIS': {
       return {
         ...state,
@@ -28,7 +34,7 @@ const reducer = (state = initialState, action = {}) => {
           {
             id: 4,
             author: 'Super Chat',
-            content: 'Test',
+            content: state.newMessageContent,
           },
         ],
       };
