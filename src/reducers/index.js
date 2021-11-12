@@ -21,6 +21,20 @@ const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case 'ADD_NEW_MESSAGE_BIS': {
+      return {
+        ...state,
+        messages: [
+          ...state.messages,
+          {
+            id: 4,
+            author: 'Super Chat',
+            content: 'Test',
+          },
+        ],
+      };
+
+      // équivalent à :
+      /*
       // on prépare le message à ajouter
       const newMessage = {
         id: 4,
@@ -42,6 +56,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         messages: newMessages,
       };
+      */
     }
     default:
       return state;
