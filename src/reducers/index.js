@@ -1,4 +1,8 @@
+import { getMessageMaxId } from '../selectors';
+
 const initialState = {
+  currentUser: 'Super Chien',
+
   messages: [
     {
       id: 1,
@@ -17,6 +21,7 @@ const initialState = {
     },
   ],
   newMessageContent: '',
+
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -32,8 +37,9 @@ const reducer = (state = initialState, action = {}) => {
         messages: [
           ...state.messages,
           {
-            id: 4,
-            author: 'Super Chat',
+            // ici on veut faire une projection du state (= un selector)
+            id: getMessageMaxId(state) + 1,
+            author: state.currentUser,
             content: state.newMessageContent,
           },
         ],
