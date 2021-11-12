@@ -10,13 +10,12 @@ const Messages = () => {
   )
 
 return (
-  <div className="container">
+  <div className="messages">
 
     {
       messages.map (
-        (message) => <Message key={message} message={message}/>
+        (message) => <Message key={message} message={message}/>        
       )
-
     }
 
   </div>

@@ -21,7 +21,7 @@ const Form = () => {
     <input 
       value={valueInput} 
       type="text" 
-      className="form-item" 
+      className="form__message" 
       placeholder="Ecrivez votre message"
       onChange={
         (event) => {
@@ -31,7 +31,7 @@ const Form = () => {
       />
      <input
       type="submit"
-      className="form-button" 
+      className="form__submit" 
       onClick={
         (event) => {
           event.preventDefault(); 

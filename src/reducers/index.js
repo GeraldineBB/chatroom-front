@@ -15,7 +15,6 @@ const reducer = (state = initialState, action = {}) => {
       console.log('je dois ajouter un message');
       console.log(`action.messageInput: ${action.messageInput}`)
       return {...state,
-        // messages: [action.messageInput]
       messages: [...state.messages, action.messageInput]
       }
 

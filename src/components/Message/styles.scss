@@ -1,8 +1,15 @@
-.container-message{
-  height: 2rem;
-  border: solid 1px rgb(204, 196, 196);
-  margin-bottom: 0.5rem;
-  padding-left: 0.5rem; 
-  padding-top: 0.4rem ;
-  text-align: left;
+@use '../../styles/vars';
+
+.message{
+  margin: 1.5 * vars.$gutter 0;
+
+  &__author{
+    margin-bottom: 0.5 * vars.$gutter;
+  }
+
+  &__content{
+    border: solid 1px #000;
+    padding: vars.$gutter;
+  }
+
 }
