@@ -1,31 +1,30 @@
 import './styles.scss';
-import Message from '../Message';
-import {useSelector} from 'react-redux'; 
 
+// on peut utiliser ce chemin pour l'import
+// grâce à un resolver prévu dans notre config de webpack
+import Message from 'src/components/Message';
+import { useSelector } from 'react-redux';
 
 const Messages = () => {
-
+  // - on récupère la liste des messages depuis le store,
   const messages = useSelector(
-    (state) => state.messages, 
-  )
+    (state) => state.messages,
+  );
 
-  const author = useSelector (
-    (state) => state.author, 
-  )
+  return (
+    <div className="messages">
 
-return (
-  <div className="messages">
-
-    {
-      messages.map (
-        (message) => <Message key={message} message={message} author={author}/>        
+      {
+      // - on transforme notre tableau de message en "tableau de composant"
+      //   on transmettra à chaque composant message les props dont il a besoin.
+      //   utilisation d'un spread
+      messages.map(
+        (message) => <Message key={message.id} {...message} />,
       )
-    }
+      }
 
-  </div>
-  ); 
-
-
+    </div>
+  );
 };
 
-export default Messages; 
+export default Messages;

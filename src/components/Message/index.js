@@ -2,16 +2,20 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const Message = ({message, author}) => (
+const Message = ({ author, content }) => (
   <div className="message">
-    <div className="message__author">{author}</div>
-    <div className="message__content">{message}</div>
+    <div className="message__author">
+      {author}
+    </div>
+    <div className="message__content">
+      {content}
+    </div>
   </div>
-)
+);
 
 Message.propTypes = {
-  message: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired, 
-}
+  author: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
 
-export default Message; 
+export default Message;
