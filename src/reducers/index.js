@@ -1,3 +1,4 @@
+import { ADD_NEW_MESSAGE_BIS, SET_NEW_MESSAGE } from '../actions';
 import { getMessageMaxId } from '../selectors';
 
 const initialState = {
@@ -26,12 +27,12 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case 'SET_NEW_MESSAGE':
+    case SET_NEW_MESSAGE:
       return {
         ...state,
         newMessageContent: action.newMessageContent,
       };
-    case 'ADD_NEW_MESSAGE_BIS': {
+    case ADD_NEW_MESSAGE_BIS: {
       return {
         ...state,
         messages: [

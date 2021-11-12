@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
+import { addNewMessageBis, setNewMessage } from '../../actions/index';
+
 import './styles.scss';
 
 // Mise en place d'un champ controllé pour le texte du nouveau message :
@@ -24,11 +26,11 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('formulaire soumis, on veut ajouter un message');
-    dispatch({ type: 'ADD_NEW_MESSAGE_BIS' });
+    dispatch(addNewMessageBis());
   };
 
   const handleChange = (event) => {
-    dispatch({ type: 'SET_NEW_MESSAGE', newMessageContent: event.target.value });
+    dispatch(setNewMessage(event.target.value));
   };
 
   return (
