@@ -24,7 +24,7 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('formulaire soumis, on veut ajouter un message');
-    dispatch({ type: 'ADD_NEW_MESSAGE_BIS', newMessageContent });
+    dispatch({ type: 'ADD_NEW_MESSAGE_BIS' });
   };
 
   const handleChange = (event) => {

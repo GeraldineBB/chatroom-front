@@ -37,6 +37,8 @@ const reducer = (state = initialState, action = {}) => {
             content: state.newMessageContent,
           },
         ],
+        // pour vider le champs à chaque ajout c'est plus simple de le gérer ici directement
+        newMessageContent: '',
       };
 
       // équivalent à :
