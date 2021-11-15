@@ -1,4 +1,6 @@
-import { ADD_NEW_MESSAGE_BIS, SET_NEW_MESSAGE } from '../actions';
+import {
+  ADD_NEW_MESSAGE_BIS, SET_EMAIL_CONTENT, SET_NEW_MESSAGE, SET_PASSWORD_CONTENT, SET_POPUPSTATE,
+} from '../actions';
 import { getMessageMaxId } from '../selectors';
 
 const initialState = {
@@ -22,11 +24,32 @@ const initialState = {
     },
   ],
   newMessageContent: '',
+  emailContent: '',
+  passwordContent: '',
+  popUp: true,
 
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SET_EMAIL_CONTENT:
+      return {
+        ...state,
+        emailContent: action.emailContent,
+      };
+
+    case SET_PASSWORD_CONTENT:
+      return {
+        ...state,
+        passwordContent: action.passwordContent,
+      };
+
+    case SET_POPUPSTATE:
+      return {
+        ...state,
+        popUp: !state.popUp,
+      };
+
     case SET_NEW_MESSAGE:
       return {
         ...state,

@@ -16,3 +16,23 @@ export const setNewMessage = (newMessageContent) => (
     newMessageContent,
   }
 );
+
+export const SET_EMAIL_CONTENT = 'SET_EMAIL_CONTENT';
+
+export const setEmailContent = (emailContent) => ({
+  type: SET_EMAIL_CONTENT,
+  emailContent,
+});
+
+export const SET_PASSWORD_CONTENT = 'SET_PASSWORD_CONTENT';
+
+export const setPasswordContent = (passwordContent) => ({
+  type: SET_PASSWORD_CONTENT,
+  passwordContent,
+});
+
+export const SET_POPUPSTATE = 'SET_POPUPSTATE';
+
+export const setPopupState = () => ({
+  type: SET_POPUPSTATE,
+});

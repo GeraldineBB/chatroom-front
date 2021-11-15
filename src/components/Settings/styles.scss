@@ -2,9 +2,11 @@
 
 .settings{
   display: flex;
-  width: 50%;
+  width: 60%;
   background-color: #0e395a;
   justify-content: flex-start;
+  position: relative;
+  
 
   &__button{
     background-color: white;
@@ -13,13 +15,13 @@
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
-    
   }
 
   &__form{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-right: 1rem;
 
     &--email{
       flex-grow: 0.8;
@@ -43,3 +45,16 @@
 
  
 }
+
+.settings{
+
+  &__OFF{
+
+    .settings__form{
+      display: none, 
+    }
+
+  }
+
+}
+
