@@ -1,0 +1,45 @@
+@use '../../styles/vars';
+
+.settings{
+  display: flex;
+  width: 50%;
+  background-color: #0e395a;
+  justify-content: flex-start;
+
+  &__button{
+    background-color: white;
+    color: #5300ff;
+    display:block;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    
+  }
+
+  &__form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    &--email{
+      flex-grow: 0.8;
+      padding: vars.$gutter;
+      margin-bottom: 0.5rem;
+    }
+    &--password{
+      flex-grow: 0.8;
+      padding: vars.$gutter;
+      margin-bottom: 0.5rem;
+    }
+    
+    &--submit{
+      padding: vars.$gutter;
+      margin-bottom: 0.5rem;
+      background-color: #5300ff;
+    }
+
+
+  }
+
+ 
+}
