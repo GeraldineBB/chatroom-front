@@ -17,9 +17,14 @@
   // transformation à appliquer si le settinfs est en état fermé
   &--open {
     transform: translateX(0);
+
+    .settings__open-close{
+      transform: rotate(405deg);
+    }
   }
 
   &__open-close{
+    transition: transform 1s;
     border-radius: 50%;
     background-color: vars.$color-light;
     border: none;
