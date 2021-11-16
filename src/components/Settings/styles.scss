@@ -1,60 +1,54 @@
 @use '../../styles/vars';
 
-.settings{
-  display: flex;
-  width: 60%;
-  background-color: #0e395a;
-  justify-content: flex-start;
-  position: relative;
-  
+.settings {
+  position: fixed;
+  top: vars.$gutter;
+  right: vars.$gutter;
+  display: flex; 
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: vars.$gutter;
 
-  &__button{
-    background-color: white;
-    color: #5300ff;
-    display:block;
-    height: 3rem;
-    width: 3rem;
+  transition: transform 0.5s;
+
+  // transformation à appliquer si le settinfs est en état fermé
+  &--close {
+    transform: translateX(15.5rem);
+  }
+
+  &__open-close{
     border-radius: 50%;
+    background-color: vars.$color-light;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    color: vars.$color-main;
+    margin-right: 1rem;
+
   }
 
   &__form{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin-right: 1rem;
-
-    &--email{
-      flex-grow: 0.8;
-      padding: vars.$gutter;
-      margin-bottom: 0.5rem;
-    }
-    &--password{
-      flex-grow: 0.8;
-      padding: vars.$gutter;
-      margin-bottom: 0.5rem;
-    }
-    
-    &--submit{
-      padding: vars.$gutter;
-      margin-bottom: 0.5rem;
-      background-color: #5300ff;
-    }
-
-
+    width: 13rem;
   }
 
- 
-}
-
-.settings{
-
-  &__OFF{
-
-    .settings__form{
-      display: none, 
-    }
-
+  &__field{
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5 * vars.$gutter;
+    padding: 0.5 * vars.$gutter;
+    border: none;
+    border-radius: 0.5rem; 
   }
 
-}
+  &__submit{
+    display: block;
+    width: 100%;
+    padding: 0.5 * vars.$gutter;
+    border: none;
+    border-radius: 0.5rem; 
+    background-color: vars.$color-third;
+    color: vars.$color-light;
 
+  }
+}
