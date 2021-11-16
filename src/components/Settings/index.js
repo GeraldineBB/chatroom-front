@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
 import './styles.scss';
-import { toggleSettings } from '../../actions';
+import { toggleSettings, setEmailContent } from '../../actions';
 
 const Settings = () => {
   const dispatch = useDispatch();
@@ -9,6 +9,8 @@ const Settings = () => {
   // on passe une callback à use Selector car nouveau rendu à chaque fois s
   const isSettingsOpen = useSelector((state) => state.isSettingsOpen);
   const className = classNames('settings', { 'settings--open': isSettingsOpen });
+
+  const emailContent = useSelector((state) => state.emailContent);
 
   // equivalent à :
   // if (isSettingsOpen) {
@@ -39,7 +41,17 @@ const Settings = () => {
       >+
       </button>
       <form className="settings__form">
-        <input type="email" placeholder="E-mail" className="settings__field" />
+        <input
+          value={emailContent}
+          type="email"
+          placeholder="E-mail"
+          className="settings__field"
+          onChange={
+            (event) => {
+              dispatch(setEmailContent(event.target.value));
+            }
+          }
+        />
         <input type="password" placeholder="Password" className="settings__field" />
         <button type="submit" className="settings__submit">Envoyer</button>
       </form>
