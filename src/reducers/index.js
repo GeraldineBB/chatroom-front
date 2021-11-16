@@ -1,6 +1,6 @@
 import {
   // eslint-disable-next-line max-len
-  ADD_NEW_MESSAGE_BIS, SET_EMAIL_CONTENT, SET_NEW_MESSAGE, SET_PASSWORD_CONTENT, SET_POPUPSTATE, TOGGLE_SETTINGS,
+  ADD_NEW_MESSAGE_BIS, SET_EMAIL_CONTENT, SET_NEW_MESSAGE, SET_PASSWORD_CONTENT, SET_POPUPSTATE, TOGGLE_SETTINGS, SET_FIELD_VALUE,
 } from '../actions';
 import { getMessageMaxId } from '../selectors';
 
@@ -25,8 +25,9 @@ const initialState = {
     },
   ],
   newMessageContent: '',
-  emailContent: '',
-  passwordContent: '',
+  // valeur du champ email :
+  emailValue: '',
+  passwordValue: '',
   // le formulaure de login est-il ouvert ?
   isSettingsOpen: true,
 
@@ -39,23 +40,32 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isSettingsOpen: !state.isSettingsOpen,
       };
-    case SET_EMAIL_CONTENT:
+    case SET_FIELD_VALUE:
       return {
         ...state,
-        emailContent: action.emailContent,
+        // équivalent à emailValue : action.emailValue
+        // ici on accède à la propriété de l'objet dont le nom est contenu dans action.name
+        // syntaxe pour échapper les propriétés de l'objet
+        [action.name]: action.value,
       };
 
-    case SET_PASSWORD_CONTENT:
-      return {
-        ...state,
-        passwordContent: action.passwordContent,
-      };
+      // case SET_EMAIL_CONTENT:
+      //   return {
+      //     ...state,
+      //     emailContent: action.emailContent,
+      //   };
 
-    case SET_POPUPSTATE:
-      return {
-        ...state,
-        isSettingsOpen: !state.isSettingsOpen,
-      };
+      // case SET_PASSWORD_CONTENT:
+      //   return {
+      //     ...state,
+      //     passwordContent: action.passwordContent,
+      //   };
+
+      // case SET_POPUPSTATE:
+      //   return {
+      //     ...state,
+      //     isSettingsOpen: !state.isSettingsOpen,
+      //   };
 
     case SET_NEW_MESSAGE:
       return {

@@ -24,6 +24,13 @@ export const toggleSettings = () => ({
 
 });
 
+export const SET_FIELD_VALUE = 'SET_FIELD_VALUE';
+
+export const setFieldValue = (name, value) => ({
+  type: SET_FIELD_VALUE,
+  name,
+});
+
 /// //////////////////////////////////////////:
 export const SET_EMAIL_CONTENT = 'SET_EMAIL_CONTENT';
 

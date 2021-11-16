@@ -1,0 +1,10 @@
+@use '../../styles/vars';
+
+.field {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5 * vars.$gutter;
+  padding: 0.5 * vars.$gutter;
+  border: none;
+  border-radius: 0.5rem;
+}

@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
 import './styles.scss';
 import { toggleSettings, setEmailContent } from '../../actions';
+import Field from '../Field';
 
 const Settings = () => {
   const dispatch = useDispatch();
@@ -41,18 +42,8 @@ const Settings = () => {
       >+
       </button>
       <form className="settings__form">
-        <input
-          value={emailContent}
-          type="email"
-          placeholder="E-mail"
-          className="settings__field"
-          onChange={
-            (event) => {
-              dispatch(setEmailContent(event.target.value));
-            }
-          }
-        />
-        <input type="password" placeholder="Password" className="settings__field" />
+        <Field name="emailValue" type="email" placeholder="E-mail" />
+        <Field name="passwordValue" type="password" placeholder="Password" />
         <button type="submit" className="settings__submit">Envoyer</button>
       </form>
     </div>
