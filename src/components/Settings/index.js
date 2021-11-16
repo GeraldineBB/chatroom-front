@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
 import './styles.scss';
@@ -14,7 +16,27 @@ const Settings = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('submit, je vais me co à une API');
+
+    // intention : JE VEUX ME CONNECTER A L'API
+    // dispatch d'une action
+    // action qui ne sera pas traduit dans le reducer (car pas de modif de l'état)
+    // nouveau composant : middleWare
+    // = videur
+    // il va se placer avant le dispatch, il va gérer les actions avant qu'elles n'arrivent au reducer
+    dispatch({ type: 'LOGIN' });
+
+    // axios.post('http://localhost:3001/login', {
+    //   email: 'bouclierman@herocorp.io',
+    //   password: 'wrong',
+    // }).then(
+    //   (response) => console.log(response.data),
+
+    //   // dispatch d'une action pour enregistrer le nom de l'utilisateur
+    // ).catch(
+    //   (error) => console.log(error),
+    // );
   };
+
   // equivalent à :
   // if (isSettingsOpen) {
   //   className = 'settings settings--open';
