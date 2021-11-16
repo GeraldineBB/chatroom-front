@@ -1,7 +1,7 @@
 @use '../../styles/vars';
 
 .app {
-  width: 500px;
+  max-width: 500px;
   margin: 0 auto;
   background-color: vars.$color-alt;
   height: 100vh;

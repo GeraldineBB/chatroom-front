@@ -17,6 +17,14 @@ export const setNewMessage = (newMessageContent) => (
   }
 );
 
+export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
+
+export const toggleSettings = () => ({
+  type: TOGGLE_SETTINGS,
+
+});
+
+/// //////////////////////////////////////////:
 export const SET_EMAIL_CONTENT = 'SET_EMAIL_CONTENT';
 
 export const setEmailContent = (emailContent) => ({

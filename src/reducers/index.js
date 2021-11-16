@@ -1,5 +1,6 @@
 import {
-  ADD_NEW_MESSAGE_BIS, SET_EMAIL_CONTENT, SET_NEW_MESSAGE, SET_PASSWORD_CONTENT, SET_POPUPSTATE,
+  // eslint-disable-next-line max-len
+  ADD_NEW_MESSAGE_BIS, SET_EMAIL_CONTENT, SET_NEW_MESSAGE, SET_PASSWORD_CONTENT, SET_POPUPSTATE, TOGGLE_SETTINGS,
 } from '../actions';
 import { getMessageMaxId } from '../selectors';
 
@@ -26,12 +27,18 @@ const initialState = {
   newMessageContent: '',
   emailContent: '',
   passwordContent: '',
-  popUp: true,
+  // le formulaure de login est-il ouvert ?
+  isSettingsOpen: true,
 
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case TOGGLE_SETTINGS:
+      return {
+        ...state,
+        isSettingsOpen: !state.isSettingsOpen,
+      };
     case SET_EMAIL_CONTENT:
       return {
         ...state,
@@ -47,7 +54,7 @@ const reducer = (state = initialState, action = {}) => {
     case SET_POPUPSTATE:
       return {
         ...state,
-        popUp: !state.popUp,
+        isSettingsOpen: !state.isSettingsOpen,
       };
 
     case SET_NEW_MESSAGE:

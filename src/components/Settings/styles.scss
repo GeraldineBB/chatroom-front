@@ -8,12 +8,15 @@
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 0.5rem;
   padding: vars.$gutter;
+  z-index: 1;
 
   transition: transform 0.5s;
+  transform: translateX(15.5rem);
+
 
   // transformation à appliquer si le settinfs est en état fermé
-  &--close {
-    transform: translateX(15.5rem);
+  &--open {
+    transform: translateX(0);
   }
 
   &__open-close{
