@@ -11,8 +11,10 @@ const Settings = () => {
   const isSettingsOpen = useSelector((state) => state.isSettingsOpen);
   const className = classNames('settings', { 'settings--open': isSettingsOpen });
 
-  const emailContent = useSelector((state) => state.emailContent);
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('submit, je vais me co à une API');
+  };
   // equivalent à :
   // if (isSettingsOpen) {
   //   className = 'settings settings--open';
@@ -41,7 +43,7 @@ const Settings = () => {
         }
       >+
       </button>
-      <form className="settings__form">
+      <form className="settings__form" onSubmit={handleSubmit}>
         <Field name="emailValue" type="email" placeholder="E-mail" />
         <Field name="passwordValue" type="password" placeholder="Password" />
         <button type="submit" className="settings__submit">Envoyer</button>
