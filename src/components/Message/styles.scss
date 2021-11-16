@@ -1,15 +1,33 @@
 @use '../../styles/vars';
 
-.message{
-  margin: 1.5 * vars.$gutter 0;
-
-  &__author{
-    margin-bottom: 0.5 * vars.$gutter;
+.message {
+  &__author {
+    padding: 2 * vars.$gutter 0 vars.$gutter vars.$gutter;
   }
 
-  &__content{
-    border: solid 1px #000;
-    padding: vars.$gutter;
+  &__content {
+    // parent en relatif
+    position: relative; 
+    background-color: vars.$color-light;
+    border-radius: 1.5rem;
+    padding: vars.$gutter 2 * vars.$gutter;
+    display: inline-block;
+
+    // pseudo element : element pas dans le dom mais qu'on va essayer de matérialiser
+    &::before{
+      // pour le matérialiser on lui met un contenu vide
+      content: ""; 
+      // enfant en absolu : on le positionne par rapport au parent le plus proche
+      position: absolute;
+      border-right: solid 1rem vars.$color-light;
+      border-bottom: solid 1rem vars.$color-light;
+      border-left: solid 1rem transparent;
+      border-top: solid 1rem transparent;
+      width: 0;
+      height: 0;
+      top: -1rem;
+      left: 0.7rem;
+    }
   }
 
 }
