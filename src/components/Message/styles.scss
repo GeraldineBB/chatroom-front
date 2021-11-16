@@ -28,6 +28,20 @@
       top: -1rem;
       left: 0.7rem;
     }
+
+    // code Anne-Line avec clip-path : 
+    // &::before {
+    //   content: "";
+    //   display: block;
+    //   position: absolute;
+    //   width: 1.5rem;
+    //   height: 1.5rem;
+    //   background-color: #fff;
+    //   clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    //   top: -1.5rem;
+    //   left: 4rem;
+    // }
+
   }
 
 }

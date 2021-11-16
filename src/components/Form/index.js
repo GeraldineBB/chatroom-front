@@ -1,3 +1,6 @@
+// on imoprte le composant react-feather qui nous intéresse et on l'utilise plus bas pour le bouton
+import { Send } from 'react-feather';
+
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addNewMessageBis, setNewMessage } from '../../actions/index';
@@ -42,7 +45,9 @@ const Form = () => {
         className="form__message"
         onChange={handleChange}
       />
-      <button type="submit" className="form__submit">&gt;</button>
+      <button type="submit" className="form__submit">
+        <Send />
+      </button>
     </form>
   );
 };

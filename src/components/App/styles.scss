@@ -2,10 +2,9 @@
 
 .app {
   width: 500px;
-  margin: 0em auto;
+  margin: 0 auto;
   background-color: vars.$color-alt;
   height: 100vh;
-  padding: vars.$gutter vars.$gutter 0; 
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
 }

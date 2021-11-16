@@ -1,14 +1,21 @@
 @use '../../styles/vars';
 
-.form{
+.form {
+  height: 3rem;
   display: flex;
 
-  &__message{
+  &__message {
+    height: 3rem;
     flex-grow: 1;
     padding: vars.$gutter;
+    border: none;
   }
-  
-  &__submit{
+
+  &__submit {
+    height: 3rem;
     padding: vars.$gutter;
+    border: none;
+    background-color: vars.$color-light;
+    color: vars.$color-main; 
   }
 }

@@ -1,3 +1,11 @@
+@use '../../styles/vars';
+
 .messages {
   height: 100%;
+  padding: vars.$gutter; 
 }
+
+// même chose de faire ça : 
+// .messages {
+//   flex-grow: 1;
+// }
