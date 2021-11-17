@@ -12,8 +12,8 @@
 		<script>
 			// on demande à la fonction io d'ouvrir un canal de comm bidirectionnelle avec le serveur socket.io qui écoute à l'adresse : http://localhost:3001
 			const socket = window.io("http://localhost:3001");
-
-			socket.on('received_message', (message) => {
+			// received message : emis par le serveur
+			socket.on('send_message', (message) => {
 				console.log('nouvel évènement received_message', message);
 			});
 
