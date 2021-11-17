@@ -1,6 +1,16 @@
 @use '../../styles/vars';
 
 .message {
+
+  &--mine {
+    text-align: right; 
+
+    .message__content::before{
+      right: 0.7rem;
+      left: auto; 
+    }
+  }
+  
   &__author {
     padding: 2 * vars.$gutter 0 vars.$gutter vars.$gutter;
   }

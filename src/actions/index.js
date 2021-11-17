@@ -29,6 +29,7 @@ export const SET_FIELD_VALUE = 'SET_FIELD_VALUE';
 export const setFieldValue = (name, value) => ({
   type: SET_FIELD_VALUE,
   name,
+  value,
 });
 
 /// //////////////////////////////////////////:

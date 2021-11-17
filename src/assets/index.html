@@ -8,5 +8,16 @@
     </head>
     <body>
         <div id="root"></div>
+		<script src="http://localhost:3001/socket.io/socket.io.js"></script>
+		<script>
+			// on demande à la fonction io d'ouvrir un canal de comm bidirectionnelle avec le serveur socket.io qui écoute à l'adresse : http://localhost:3001
+			const socket = window.io("http://localhost:3001");
+
+			socket.on('received_message', (message) => {
+				console.log('nouvel évènement received_message', message);
+			});
+
+			socket.emit('send_message', { author: 'Burt', content: 'Hello world'});
+		</script>
     </body>
 </html>

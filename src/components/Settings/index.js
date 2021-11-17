@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
 import './styles.scss';
-import { toggleSettings, setEmailContent } from '../../actions';
+import { toggleSettings } from '../../actions';
 import Field from '../Field';
 
 const Settings = () => {

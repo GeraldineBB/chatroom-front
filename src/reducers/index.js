@@ -35,6 +35,13 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'SET_CURRENT_USER':
+      return {
+        ...state,
+        currentUser: action.value,
+        // on en profite pour refermer le formulaire de login
+        isSettingsOpen: false,
+      };
     case TOGGLE_SETTINGS:
       return {
         ...state,
