@@ -3,7 +3,7 @@ import { Send } from 'react-feather';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { addNewMessageBis, setNewMessage } from '../../actions/index';
+import { addNewMessageBis, sendMessage, setNewMessage } from '../../actions';
 
 import './styles.scss';
 
@@ -29,7 +29,10 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('formulaire soumis, on veut ajouter un message');
-    dispatch(addNewMessageBis());
+    // dispatch(addNewMessageBis());
+    // à la soumission du formulaire, on emet une intention d'envoyer un message vers le serveur websocket
+    // cette action sera interceptée par le middleware websocket
+    dispatch(sendMessage());
   };
 
   const handleChange = (event) => {

@@ -1,6 +1,6 @@
 import {
   // eslint-disable-next-line max-len
-  ADD_NEW_MESSAGE_BIS, SET_EMAIL_CONTENT, SET_NEW_MESSAGE, SET_PASSWORD_CONTENT, SET_POPUPSTATE, TOGGLE_SETTINGS, SET_FIELD_VALUE,
+  ADD_NEW_MESSAGE_BIS, SET_EMAIL_CONTENT, SET_NEW_MESSAGE, SET_PASSWORD_CONTENT, SET_POPUPSTATE, TOGGLE_SETTINGS, SET_FIELD_VALUE, ADD_RECEIVED_MESSAGE,
 } from '../actions';
 import { getMessageMaxId } from '../selectors';
 
@@ -56,29 +56,22 @@ const reducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
 
-      // case SET_EMAIL_CONTENT:
-      //   return {
-      //     ...state,
-      //     emailContent: action.emailContent,
-      //   };
-
-      // case SET_PASSWORD_CONTENT:
-      //   return {
-      //     ...state,
-      //     passwordContent: action.passwordContent,
-      //   };
-
-      // case SET_POPUPSTATE:
-      //   return {
-      //     ...state,
-      //     isSettingsOpen: !state.isSettingsOpen,
-      //   };
-
     case SET_NEW_MESSAGE:
       return {
         ...state,
         newMessageContent: action.newMessageContent,
       };
+
+    case ADD_RECEIVED_MESSAGE: {
+      return {
+        ...state,
+        messages: [
+          ...state.messages,
+          action.message,
+        ],
+        newMessageContent: action.message.author === state.currentUser ? '' : state.newMessageContent,
+      };
+    }
     case ADD_NEW_MESSAGE_BIS: {
       return {
         ...state,
